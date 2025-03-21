@@ -1,0 +1,107 @@
+/* Estilos generales */
+body {
+    background: #020d18;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Contenedor */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Título */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Campo de flores */
+.flower-field {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* Estilos de las flores */
+.flower {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+    animation: sway 2s infinite alternate ease-in-out;
+}
+
+/* Pétalos */
+.flower::before,
+.flower::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: yellow;
+    border-radius: 50%;
+}
+
+.flower::before {
+    top: -25px;
+    left: 0;
+}
+
+.flower::after {
+    top: 25px;
+    left: 0;
+}
+
+/* Animación de balanceo */
+@keyframes sway {
+    from {
+        transform: rotate(-5deg);
+    }
+    to {
+        transform: rotate(5deg);
+    }
+}
+
+/* Mensaje */
+.message {
+    font-size: 18px;
+    margin-top: 20px;
+    max-width: 80%;
+}
+
+/* Efecto de luciérnagas */
+@keyframes flicker {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Luciérnagas */
+.firefly {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 8px yellow;
+    animation: flicker 2s infinite alternate;
+}
